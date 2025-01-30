@@ -42,8 +42,6 @@
 // startServer();
 
 
-
-
 import express from 'express';
 import axios from 'axios';
 import fs from 'fs';
@@ -82,7 +80,10 @@ app.get('/scrape-etf', async (req, res) => {
             }
         });
 
+        
         const etfData = response.data;
+        console.log(etfData.length);
+        
 
         // Define the file path where the data will be saved
         const filePath = path.join(__dirname, 'etfData.json');
@@ -102,6 +103,16 @@ app.get('/scrape-etf', async (req, res) => {
     }
 });
 
+
+
+
+
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
+
+
+
+
+
+
